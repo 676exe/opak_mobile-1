@@ -24,6 +24,7 @@ class BasitBilgialanWiget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecorCon.renkliCard(color),
       margin: EdgeCon.card,
       padding: EdgeCon.card,
       child: InkWell(
