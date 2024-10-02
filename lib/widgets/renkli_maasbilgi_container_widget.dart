@@ -31,12 +31,12 @@ class RenkliMaasbilgiContainerWidget extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: TextStyleCon.negativeStyle,
+              style: TextStyleCon.negativeTitle,
             ),
           ),
           Text(
             amount,
-            style: TextStyleCon.negativeStyle,
+            style: TextStyleCon.negativeTitle,
           ),
         ],
       ),

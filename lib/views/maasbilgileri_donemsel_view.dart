@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:opak_mobile/constants/edge_con.dart';
 import 'package:opak_mobile/controllers/maas_bilgileri_controller.dart';
 import 'package:opak_mobile/widgets/maasbilgi_row_widget.dart';
 import 'package:opak_mobile/widgets/renkli_maasbilgi_container_widget.dart';
+
 
 class MaasbilgileriDonemselView extends GetView<MaasBilgileriController> {
   const MaasbilgileriDonemselView({super.key});
@@ -12,9 +14,10 @@ class MaasbilgileriDonemselView extends GetView<MaasBilgileriController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Maaş Bilgileri'),
+        centerTitle: true,
       ),
       body: const Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeCon.card,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

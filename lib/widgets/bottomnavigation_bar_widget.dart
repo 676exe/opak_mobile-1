@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BottomnavigationBarWidget extends StatelessWidget {
   const BottomnavigationBarWidget({
@@ -25,10 +26,18 @@ class BottomnavigationBarWidget extends StatelessWidget {
               label: 'Profil',
             ),
           ],
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.grey,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black,
           backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,
+          onTap: (value) {
+            if (value == 0) {
+              Get.toNamed("/menu");
+            }
+            if (value == 2) {
+              Get.toNamed("/profil");
+            }
+          },
         ),
         Positioned(
           left: (MediaQuery.of(context).size.width - 56) / 2,

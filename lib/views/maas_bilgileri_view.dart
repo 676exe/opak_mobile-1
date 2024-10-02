@@ -15,10 +15,10 @@ class MaasBilgileriView extends GetView<MaasBilgileriController> {
         centerTitle: true,
         title: const Text("Dönemsel Maaş Bilgileri"),
       ),
-      body: const Column(
+      body: Column(
         children: [
-          DonemselmaasbilgisiCardWidget(),
-          Expanded(child: DonemselMaasGrafigiWidget())
+          DonemselmaasbilgisiCardWidget(maaslar: controller.maaslar),
+          const Expanded(child: DonemselMaasGrafigiWidget())
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:opak_mobile/controllers/main_menu_controller.dart';
+import 'package:opak_mobile/controllers/ana_menu_controller.dart';
 import '../widgets/bildirim_listesi_widget.dart';
 import '../widgets/bottomnavigation_bar_widget.dart';
 import '../widgets/kidem_gunu_widget.dart';
@@ -9,12 +9,17 @@ import '../widgets/user_tile_widget.dart';
 import '../widgets/vardiya_widget.dart';
 import '../widgets/yemek_listesi_widget.dart';
 
-class MainMenuView extends GetView<MainMenuController> {
-  const MainMenuView({super.key});
+class AnaMenuView extends GetView<AnaMenuController> {
+  const AnaMenuView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+        scrolledUnderElevation: 0.0,
+        backgroundColor: Colors.white,
+      ),
       body: Column(
         children: [
           const UserTileWidget(),
@@ -31,10 +36,19 @@ class MainMenuView extends GetView<MainMenuController> {
             ),
           ),
           const SureWidget(),
+          const Divider(
+            endIndent: 100,
+            indent: 100,
+            color: Colors.grey,
+          ),
           YemekListesiWidget(
             menuler: controller.menuler,
           ),
-          const Expanded(child: BildirimListesiWidget())
+          Flexible(
+              child: SizedBox(
+                  height: 200,
+                  child: BildirimListesiWidget(
+                      bildirimler: controller.bildirimler)))
         ],
       ),
       bottomNavigationBar: const BottomnavigationBarWidget(),

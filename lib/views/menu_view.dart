@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:opak_mobile/controllers/menu_1controller.dart';
 import 'package:opak_mobile/widgets/basit_bilgialan_wiget.dart';
-import '../widgets/bottomnavigation_bar_widget.dart';
+
+import '../controllers/menu_1controller.dart';
 
 class MenuView extends GetView<Menu1Controller> {
   const MenuView({super.key});
@@ -10,17 +10,25 @@ class MenuView extends GetView<Menu1Controller> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Menü'),
+        centerTitle: true,
+      ),
       body: GridView.builder(
-        itemCount: controller.test.length,
+        itemCount: controller.menuler.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 1.5),
         itemBuilder: (context, index) {
           return BasitBilgialanWiget(
-              string: controller.test.keys.elementAt(index),
-              iconData: controller.test.values.elementAt(index));
+            string: controller.menuler[index][0],
+            iconData: controller.menuler[index][1],
+            route: controller.menuler[index][2],
+            remove: controller.menuler[index][3],
+            color: controller.menuler[index][4],
+            background:  controller.menuler[index][5],
+          );
         },
       ),
-      bottomNavigationBar: const BottomnavigationBarWidget(),
     );
   }
 }

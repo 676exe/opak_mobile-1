@@ -1,59 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:opak_mobile/constants/edge_con.dart';
-import 'package:opak_mobile/constants/text_style_con.dart';
 
-import '../constants/color_con.dart';
+import '../constants/box_decor_con.dart';
+import '../constants/edge_con.dart';
 
 class UserTileWidget extends StatelessWidget {
-  const UserTileWidget({
-    super.key,
-  });
+  const UserTileWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return const Card(
-      color: ColorCon.foreGround,
-      child: Padding(
-        padding: EdgeCon.card,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(right: 16),
-              child: CircleAvatar(
-                radius: 28,
-                foregroundImage: NetworkImage(
-                  "https://avatars.githubusercontent.com/u/124432670?v=4",
-                ),
+    return Container(
+      decoration: BoxDecorCon.siyahGolge(),
+      margin: EdgeCon.card,
+      padding: EdgeCon.card,
+      child: const Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(right: 16),
+            child: CircleAvatar(
+              radius: 28,
+              foregroundImage: NetworkImage(
+                "https://media.licdn.com/dms/image/D4D03AQE1hZCswa8wtQ/profile-displayphoto-shrink_200_200/0/1714775679073?e=2147483647&v=beta&t=fcpxehg35iOKJvHKltTOaFhB05rLnm7DkxFDI-kqVLE",
               ),
             ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "SELMAN KOYUNCU",
-                    style: TextStyleCon.title,
-                  ),
-                  Text("MUHASEBE FİNANS EHİL PERSONELİ")
-                ],
+          ),
+          SizedBox(width: 16),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Zekeriya Çakır",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.wb_sunny,
-                  size: 50,
-                  color: ColorCon.gunes,
-                ),
-                Text(
-                  "32.3°C",
-                  style: TextStyleCon.title,
-                )
-              ],
-            )
-          ],
-        ),
+              Text(
+                "Bilgisayar Mühendisi",
+                style: TextStyle(fontSize: 14, color: Colors.grey),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

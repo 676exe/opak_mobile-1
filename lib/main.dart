@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:opak_mobile/constants/color_con.dart';
 import 'package:opak_mobile/constants/pageroute_con.dart';
 
 void main() {
@@ -16,10 +15,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: ColorCon.backGround,
+        scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
         useMaterial3: true,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color.fromARGB(255, 0, 0, 255),
+          secondary: Colors.orangeAccent,
+        ),
       ),
-      initialRoute: '/navigation',
+      initialRoute: '/giris',
       getPages: PagerouteCon.getPage,
       unknownRoute: PagerouteCon.unknownRoute,
     );
